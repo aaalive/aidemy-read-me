@@ -1,0 +1,21 @@
+CREATE TABLE Profile (
+    id TEXT NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    ageGroup TEXT NOT NULL,
+    learningGoal TEXT NOT NULL,
+    experienceLevel TEXT NOT NULL,
+    createdAtEpochMillis INTEGER NOT NULL
+);
+
+insertProfile:
+INSERT INTO Profile (id, name, ageGroup, learningGoal, experienceLevel, createdAtEpochMillis)
+VALUES (?, ?, ?, ?, ?, ?);
+
+selectAllProfiles:
+SELECT * FROM Profile ORDER BY createdAtEpochMillis DESC;
+
+selectProfileById:
+SELECT * FROM Profile WHERE id = ?;
+
+deleteProfile:
+DELETE FROM Profile WHERE id = ?;
